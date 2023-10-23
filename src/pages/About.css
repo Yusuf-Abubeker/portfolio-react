@@ -1,0 +1,88 @@
+/* About.css */
+
+.about-container {
+    margin-top: 120px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  
+  .about-intro {
+    animation: fadeIn 1s;
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .about-intro h1 {
+    font-size: 2rem;
+    color: #007BFF;
+    cursor: pointer;
+    background: linear-gradient(135deg);
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .about-intro p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .about-intro:hover {
+    color: #0040FF;
+    transform: scale(1.02);
+  }
+  
+  .about-description, .about-education, .about-work-experience, .about-projects, .about-hobbies, .about-contact {
+    animation: fadeIn 1s;
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .about-description h2, .about-education h2, .about-work-experience h2, .about-projects h2, .about-hobbies h2, .about-contact h2, .about-skills h2 {
+    font-size: 1.5rem;
+    color: #007BFF;
+  }
+  
+  .about-description p, .about-education p, .about-work-experience p, .about-projects p, .about-hobbies p, .about-contact p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    animation: fadeIn 1s;
+  }
+  
+  .icon-container .icon {
+    font-size: 3rem;
+    color: #007BFF;
+    transition: color 0.3s;
+  }
+  
+  .icon-container .icon:hover {
+    color: #0040FF;
+     transform: scale(1.1) rotate(20deg);
+  }
+  
+  /* Animation keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

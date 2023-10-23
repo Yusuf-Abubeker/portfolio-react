@@ -1,0 +1,131 @@
+/* Styles for screens wider than 768px (desktop) */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 20px 0;
+}
+
+.form-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  transition: background-color 0.3s;
+}
+.form-container:hover {
+    background-color: #eee;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box; /* Add this property to fix the overflow */
+}
+input:hover,
+textarea:hover {
+  background-color: #eee;
+  transition: background-color 0.3s;
+}
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.msg-btn {
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.msg-btn:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s;
+}
+.msg-btn:active {
+    position: relative;
+    top: 2px;
+}
+.contact-info,
+.services,
+.social-media {
+  margin-top: 20px;
+  text-align: center;
+}
+.social-media a {
+  text-decoration: none;
+  color: #007bff;
+  margin: 0 10px;
+  transition: color 0.3s, transform 0.3s; /* Add a color and transform transition */
+}
+
+.social-media a:hover {
+  color: #ff9900;
+  transform: scale(1.2) rotate(20deg);
+  transition: transform 0.3s;
+}
+
+.service-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow services to wrap to the next row */
+  justify-content: space-around;
+}
+
+.service {
+  flex: 1; /* Make services take up equal space in a row */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px;
+  transition: transform 0.3s;
+}
+.service:hover {
+  transform: scale(1.05);
+}
+a {
+  text-decoration: none;
+  color: #007bff;
+  margin: 0 10px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+  transform: scale(1.1);
+}
+
+/* Styles for screens up to 768px (mobile) */
+@media (max-width: 768px) {
+  .form-container {
+    max-width: 100%;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+  }
+
+  .service {
+    flex-basis: calc(50% - 20px); /* Two services per row with a small gap */
+  }
+}

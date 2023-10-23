@@ -1,0 +1,130 @@
+/* Home.css */
+
+/* Container styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s;
+  animation: fadeIn 2s;
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: slideIn 1s;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Content styles */
+.content {
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  color: #007BFF;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 20px 0;
+}
+
+/* Button styles */
+.cta-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* Icon section styles */
+.icon-section {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 20px auto;
+  animation: fadeIn 1s;
+}
+
+.icon {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  transition: transform 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.icon p {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 20px;
+  }
+  
+  .content h1 {
+    font-size: 2rem;
+  }
+  
+  .content p {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .icon {
+    font-size: 1rem;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
