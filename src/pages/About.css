@@ -75,7 +75,11 @@
     color: #0040FF;
      transform: scale(1.1) rotate(20deg);
   }
-  
+  @media (max-width: 768px) {
+    .icon-container .icon {
+      font-size: 1.5rem; /* Adjust the font size for smaller screens */
+    }
+  }
   /* Animation keyframes */
   @keyframes fadeIn {
     from {

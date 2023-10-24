@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./Contact.css"; // Import the Contact CSS
-import {FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaTelegram } from "react-icons/fa"; // Import social media icons
+import "./Contact.css";
+import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaTelegram } from "react-icons/fa";
+import { motion } from "framer-motion"; // Import Framer Motion
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,10 +17,9 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can add code to handle form submission here, such as sending data to an API or backend server.
-    // You may also show a success message to the user.
     console.log(formData);
   };
+
   const services = [
     {
       title: "Web Development",
@@ -35,97 +35,120 @@ const Contact = () => {
     },
   ];
 
-  return (
-    <div className="contact-container">
-    <h1>Contact Us</h1>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+  };
 
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
+  return (
+    <motion.div
+      className="contact-container"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <h1>Contact Us</h1>
       <section className="contact-form">
         <h2>Contact Form</h2>
         <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit" className="msg-btn">Send Message</button>
-        </form>
+          <motion.form onSubmit={handleSubmit} variants={itemVariants}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+            <motion.button type="submit" className="msg-btn">
+              Send Message
+            </motion.button>
+          </motion.form>
         </div>
       </section>
       <section className="contact-info">
         <h2>Contact Information</h2>
-
-        <p>Email: <a href="mailto:yusufabubeker2@gmail.com">yusufabubeker2@gmail.com</a></p>
+        <motion.p
+          variants={itemVariants}
+        >
+          Email: <a href="mailto:yusufabubeker2@gmail.com">yusufabubeker2@gmail.com</a>
+        </motion.p>
       </section>
       <section className="services">
         <h2>Our Services</h2>
-        <div className="service-list">
+        <motion.div className="service-list" variants={itemVariants}>
           {services.map((service, index) => (
-            <div key={index} className="service">
+            <motion.div key={index} className="service">
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
-      {/* Social Media Links */}
       <section className="social-media">
         <h2>Follow Us</h2>
-        <a
+        <motion.a
           href="#"
           target="_blank"
           rel="noopener noreferrer"
+          variants={itemVariants}
         >
           <FaTwitter size={32} />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
           href=""
           target="_blank"
           rel="noopener noreferrer"
+          variants={itemVariants}
         >
           <FaFacebook size={32} />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
           href="https://instagram.com/example"
           target="_blank"
           rel="noopener noreferrer"
+          variants={itemVariants}
         >
           <FaInstagram size={32} />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
           href="https://www.linkedin.com/in/your-profile"
           target="_blank"
           rel="noopener noreferrer"
+          variants={itemVariants}
         >
           <FaLinkedin size={32} />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
           href="https://t.me/yusufbina"
           target="_blank"
           rel="noopener noreferrer"
+          variants={itemVariants}
         >
           <FaTelegram size={32} />
-        </a>
+        </motion.a>
       </section>
-    </div>
+    </motion.div>
   );
 };
 
